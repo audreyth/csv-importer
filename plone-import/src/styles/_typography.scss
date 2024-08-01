@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$baseFontFamily: "Montserrat", sans-serif;
+$baseFontSize: 16px;
+
+@mixin baseStyle {
+  font-family: $baseFontFamily;
+  line-height: 100%;
+}
+
+@mixin fontSizeXS {
+  @include baseStyle;
+  font-size: $baseFontSize * 0.75;
+  font-weight: 600;
+}
+
+@mixin fontSizeSm {
+  @include baseStyle;
+  font-size: $baseFontSize * 0.85;
+  font-weight: 600;
+}
+
+@mixin fontSizeBase {
+  @include baseStyle;
+  font-size: $baseFontSize * 0.9;
+  font-weight: 600;
+}
+
+@mixin fontSizeMd {
+  @include baseStyle;
+  font-size: $baseFontSize * 1.25;
+  font-weight: 600;
+}
+
+@mixin fontSizeLg {
+  @include baseStyle;
+  font-size: $baseFontSize * 1.5;
+  font-weight: 600;
+}
+
+@mixin fontSizeXL {
+  @include baseStyle;
+  font-size: $baseFontSize * 1.75;
+  font-weight: 700;
+}

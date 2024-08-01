@@ -1,0 +1,48 @@
+@use "../../../styles/typography" as font;
+@use "../../../styles/colors" as color;
+@use "../../../styles/variables" as var;
+
+@mixin buttonBaseStyle {
+  @include font.fontSizeBase;
+  color: color.$white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 75px;
+  border: none;
+  border-radius: var.$radiusSm;
+  transition: 0.3s;
+  padding: var.$paddingSm var.$paddingMd;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.toggle-button {
+  @include var.flexRow;
+  align-items: center;
+  gap: var.$gapSm;
+  // width: 100%;
+  
+  width: fit-content;
+
+  &__on {
+    @include buttonBaseStyle;
+    background-color: color.$green;
+  }
+
+  &__off {
+    @include buttonBaseStyle;
+    background-color: color.$red;
+  }
+
+  &__text {
+    @include font.fontSizeXS;
+    font-weight: 500;
+  }
+}

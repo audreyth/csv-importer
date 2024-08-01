@@ -1,0 +1,63 @@
+/* Variables */
+$baseline: 16px;
+
+$paddingNano: $baseline * 0.5;
+$paddingSm: $baseline * 0.75;
+$padding: $baseline;
+$paddingMd: $baseline * 1.25;
+$paddingLg: $baseline * 1.5;
+$paddingXL: $baseline * 2;
+$paddingHuge: $baseline * 3;
+
+$marginCenter: 0 auto;
+$marginNano: $baseline * 0.5;
+$marginSm: $baseline * 0.75;
+$margin: $baseline;
+$marginMd: $baseline * 1.25;
+$marginLg: $baseline * 1.5;
+$marginXL: $baseline * 2;
+$marginHuge: $baseline * 2.5;
+
+$gapSuperNano: $baseline * 0.25;
+$gapNano: $baseline * 0.5;
+$gapSm: $baseline * 0.75;
+$gap: $baseline;
+$gapMd: $baseline * 1.25;
+$gapLg: $baseline * 1.5;
+
+/* Radius */
+$radiusNano: 2px;
+$radiusSm: 4px;
+$radiusMd: 6px;
+$radiusLg: 8px;
+$radiusXL: 10px;
+$radiusRound: 999rem;
+
+@mixin itemRadiusStyle {
+  &:first-child {
+    border-top-left-radius: $radiusSm;
+    border-bottom-left-radius: $radiusSm;
+  }
+
+  &:last-child {
+    border-top-right-radius: $radiusSm;
+    border-bottom-right-radius: $radiusSm;
+  }
+}
+
+/* Flex */
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}

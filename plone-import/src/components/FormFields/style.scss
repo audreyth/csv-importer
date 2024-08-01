@@ -1,0 +1,89 @@
+@use "../../styles/typography" as font;
+@use "../../styles/colors" as color;
+@use "../../styles/variables" as var;
+
+@mixin baseSectionGroup {
+  gap: var.$gapSm;
+  width: 100%;
+}
+
+.form-fields {
+  @include var.flexColumn;
+  gap: var.$gapSm;
+  width: 100%;
+  border: none;
+  color: color.$darkGray;
+
+  &__user {
+    @include baseSectionGroup;
+    @include var.flexRow;
+  }
+
+  &__details {
+    @include baseSectionGroup;
+    @include var.flexRow;
+  }
+
+  &__file {
+    @include baseSectionGroup;
+    @include var.flexColumn;
+  }
+
+  &__group {
+    @include var.flexColumn;
+    gap: var.$gapNano;
+    width: 100%;
+  }
+
+  &__label {
+    @include font.fontSizeXS;
+    text-transform: uppercase;
+  }
+
+  &__input {
+    @include font.fontSizeSm;
+    padding: var.$paddingSm;
+    border: none;
+    border-radius: var.$radiusSm;
+    font-weight: 500;
+  }
+
+  .file-upload {
+    @include var.flexColumn;
+    gap: var.$gapNano;
+    width: 100%;
+
+    &__input-container {
+      @include var.flexRow;
+      @include var.flexCenter;
+      position: relative;
+      justify-content: space-between;
+      padding: var.$paddingNano var.$paddingSm;
+      border-radius: var.$radiusSm;
+      background-color: color.$white;
+    }
+
+    &__input {
+      display: none;
+    }
+
+    &__button {
+      @include font.fontSizeBase;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &__file-name {
+      @include font.fontSizeSm;
+    }
+
+    &__label {
+      @include font.fontSizeXS;
+      text-transform: uppercase;
+    }
+  }
+}

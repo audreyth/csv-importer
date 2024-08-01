@@ -1,0 +1,55 @@
+@use "../../../styles/typography" as font;
+@use "../../../styles/colors" as color;
+@use "../../../styles/variables" as var;
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+
+  &__checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  &__label {
+    cursor: pointer;
+    width: 50px;
+    height: 24px;
+    background: color.$gray;
+    display: inline-block;
+    border-radius: var.$radiusRound;
+    position: relative;
+    margin-right: var.$marginSm;
+  }
+
+  &__label:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: color.$white;
+    border-radius: var.$radiusRound;
+    transition: 0.3s;
+  }
+
+  &__checkbox:checked + &__label {
+    background: color.$green;
+  }
+
+  &__checkbox:checked + &__label:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+
+  &__label:active:after {
+    width: 28px;
+  }
+
+  &__text {
+    @include font.fontSizeXS;
+    text-transform: uppercase;
+  }
+}

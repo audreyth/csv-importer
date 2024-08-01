@@ -1,0 +1,32 @@
+@use "../../styles/typography" as font;
+@use "../../styles/colors" as color;
+@use "../../styles/variables" as var;
+
+.import-form {
+  @include var.flexCenter;
+  @include var.flexColumn;
+  gap: var.$gapSm;
+  border-radius: var.$radiusSm;
+  width: 100%;
+  color: color.$darkGray;
+
+  &__options {
+    @include var.flexColumn;
+    width: 100%;
+    gap: var.$gapNano;
+  }
+
+  &__options-text {
+    @include font.fontSizeXS;
+    text-transform: uppercase;
+  }
+
+  &__options-buttons {
+    @include var.flexColumn;
+    gap: var.$gapSm;
+    padding: var.$paddingSm;
+    border-radius: var.$radiusSm;
+    background-color: color.$white;
+    width: 100%;
+  }
+}

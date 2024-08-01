@@ -1,0 +1,116 @@
+@use "../../styles/typography" as font;
+@use "../../styles/colors" as color;
+@use "../../styles/variables" as var;
+
+@mixin itemBaseStyle {
+  @include var.flexRow;
+  align-items: center;
+  gap: var.$gapSm;
+  @include font.fontSizeBase;
+  font-weight: 500;
+  padding: var.$paddingSm;
+  border-radius: var.$radiusSm;
+  background-color: color.$veryLightGray;
+  margin-bottom: var.$marginNano;
+}
+
+@mixin iconBaseStyle {
+  @include font.fontSizeMd;
+}
+
+.rows-view {
+  @include var.flexColumn;
+  gap: var.$gapSm;
+  width: 100%;
+  margin: var.$paddingSm 0;
+  color: color.$darkGray;
+
+  &__group {
+    width: 100%;
+    padding: var.$paddingSm 0;
+  }
+
+  &__title {
+    @include font.fontSizeMd;
+  }
+
+  &__buttons-group {
+    @include var.flexRow;
+    width: 100%;
+    gap: var.$gapSm;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    &--selectable {
+      @include itemBaseStyle;
+    }
+
+    &--imported {
+      @include itemBaseStyle;
+    }
+
+    &--imported.new::after {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      content: "New";
+      background-color: color.$blue;
+      color: color.$white;
+      border-radius: var.$radiusSm;
+      padding: 2px var.$paddingNano;
+    }
+
+    &--not-imported {
+      @include itemBaseStyle;
+    }
+
+    &--skipped {
+      @include itemBaseStyle;
+    }
+  }
+
+  &__item-icon {
+    &--imported {
+      @include iconBaseStyle;
+      color: color.$green;
+    }
+
+    &--not-imported {
+      @include iconBaseStyle;
+      color: color.$red;
+    }
+
+    &--skipped {
+      @include iconBaseStyle;
+      color: color.$blue;
+    }
+  }
+
+  &__message {
+    @include var.flexRow;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__message-icon {
+    @include iconBaseStyle;
+    color: color.$blue;
+    // color: color.$darkBlue;
+    // display: flex;
+    // align-items: center; // tk
+  }
+
+  &__message-text {
+    @include font.fontSizeSm;
+    font-weight: 400;
+  }
+
+  &__checkbox {
+    cursor: pointer;
+  }
+}

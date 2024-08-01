@@ -1,0 +1,59 @@
+@use "../../../styles/typography" as font;
+@use "../../../styles/colors" as color;
+@use "../../../styles/variables" as var;
+
+@mixin buttonBaseStyle {
+  color: color.$white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: fit-content;
+  border: none;
+  border-radius: var.$radiusSm;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.button {
+  &__default {
+    @include buttonBaseStyle;
+    @include font.fontSizeBase;
+    padding: var.$paddingSm var.$paddingMd;
+    background: color.$darkGray;
+    align-self: flex-start;
+    margin-bottom: var.$marginSm;
+  }
+
+  &__select {
+    @include buttonBaseStyle;
+    @include font.fontSizeBase;
+    padding: var.$paddingSm var.$paddingMd;
+    background: color.$blue;
+    margin-bottom: var.$marginSm;
+  }
+
+  &__remove {
+    @include buttonBaseStyle;
+    @include font.fontSizeSm;
+    padding: var.$paddingNano var.$paddingMd;
+    background-color: color.$red;
+  }
+
+  &__page {
+    @include buttonBaseStyle;
+    @include font.fontSizeSm;
+    padding: var.$paddingNano var.$paddingMd;
+    background: color.$darkGray;
+  }
+
+  &__hidden {
+    display: none;
+  }
+}

@@ -1,0 +1,57 @@
+@use "../../styles/typography" as font;
+@use "../../styles/colors" as color;
+@use "../../styles/variables" as var;
+
+@mixin baseStyle {
+  @include font.fontSizeBase;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  width: fit-content;
+  border-radius: var.$radiusMd;
+  padding: var.$padding var.$paddingMd;
+  color: color.$darkGray;
+  z-index: 9999;
+  transform: translateY(100%);
+  animation: slideInFromBottom 0.5s ease-out forwards, fadeOut 0.5s 2.5s ease-out forwards;
+}
+
+.notification {
+  &__success {
+    @include baseStyle;
+    background-color: color.$green;
+  }
+
+  &__info {
+    @include baseStyle;
+    background-color: color.$blue;
+  }
+
+  &__unauthorized {
+    @include baseStyle;
+    background-color: color.$red;
+  }
+
+  &__error {
+    @include baseStyle;
+    background-color: color.$red;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

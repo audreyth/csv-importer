@@ -1,0 +1,16 @@
+@use "../../styles/typography" as font;
+@use "../../styles/colors" as color;
+@use "../../styles/variables" as var;
+
+.loading-spinner {
+  @include var.flexCenter;
+  @include var.flexColumn;
+  height: 70px;
+  margin-top: var.$marginMd;
+
+  &__text {
+    @include font.fontSizeBase;
+    padding-top: var.$paddingNano;
+    color: color.$darkGray;
+  }
+}

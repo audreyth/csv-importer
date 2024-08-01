@@ -1,0 +1,19 @@
+@use "./styles/variables" as var;
+@use "./styles/typography" as font;
+@use "./styles/colors" as color;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  letter-spacing: 1px;
+  font-family: font.$baseFontFamily;
+  background-color: color.$lightGray;
+  overflow-y: scroll;
+}

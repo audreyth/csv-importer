@@ -1,0 +1,69 @@
+@use "../../styles/typography" as font;
+@use "../../styles/colors" as color;
+@use "../../styles/variables" as var;
+
+@mixin itemsBaseStyle {
+  @include font.fontSizeXS;
+  padding: var.$paddingNano;
+  font-weight: 500;
+}
+
+.buttons-group {
+  @include var.flexRow;
+  gap: var.$gapSm;
+  width: 100%;
+}
+
+.log {
+  padding: var.$paddingSm;
+  background-color: color.$veryLightGray;
+  border-radius: var.$radiusSm;
+  width: 100%;
+
+  &__title {
+    @include font.fontSizeMd;
+    margin-bottom: var.$margin;
+  }
+
+  &__table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: var.$marginSm;
+  }
+
+  &__table-header {
+    text-align: left;
+    @include font.fontSizeBase;
+
+    th {
+      padding: var.$paddingNano;
+    }
+  }
+
+  &__table-row {
+    td {
+      @include itemsBaseStyle;
+      @include var.itemRadiusStyle;
+      width: 25%;
+    }
+
+    &:nth-child(even) {
+      background-color: color.$lightGray;
+    }
+  }
+
+  &__new-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var.$margin;
+  }
+
+  &__new-item {
+    @include itemsBaseStyle;
+    border-radius: var.$radiusSm;
+
+    &:nth-child(odd) {
+      background-color: color.$lightGray;
+    }
+  }
+}

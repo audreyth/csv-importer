@@ -1,0 +1,25 @@
+@use "../../styles/typography" as font;
+@use "../../styles/colors" as color;
+@use "../../styles/variables" as var;
+
+.import-container {
+  width: 700px;
+  margin: 0 auto;
+  padding: var.$paddingXL;
+  @include var.flexColumn;
+  @include var.flexCenter;
+
+  &__title {
+    @include font.fontSizeXL;
+    margin-bottom: var.$margin;
+  }
+
+  .notification-container {
+    margin-top: var.$marginMd;
+    height: 60px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

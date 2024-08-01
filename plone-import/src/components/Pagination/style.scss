@@ -1,0 +1,14 @@
+@use "../../styles/typography" as font;
+@use "../../styles/colors" as color;
+@use "../../styles/variables" as var;
+
+.pagination {
+  @include var.flexRow;
+  gap: var.$gapNano;
+  width: 100%;
+
+  &__current-page {
+    @include font.fontSizeXS;
+    align-self: center;
+  }
+}
